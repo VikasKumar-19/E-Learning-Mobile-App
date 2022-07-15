@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import MenuBar from "../components/MenuBar";
 
 const Home = () => {
   const description = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores possimus accusamus perferendis consectetur cupiditate dolore minima quam omnis, ipsa aliquam ea atque, facilis iure laudantium aspernatur, distinctio odio! Aperiam, aliquam!`;
@@ -12,6 +13,9 @@ const Home = () => {
         <Text style={styles.mainHeader}>E-Learning by Vikas</Text>
         <Text style={styles.paraStyle}>{description}</Text>
       </View>
+      <View style={styles.menuBar}>
+        <MenuBar />
+      </View>
     </View>
   );
 };
@@ -21,9 +25,7 @@ export default Home;
 const styles = StyleSheet.create({
   mainContainer:{
     flex: 1,
-    justifyContent: "space-between",
     backgroundColor: "#e1e2e1",
-    alignItems: "center",
     paddingHorizontal: 20
   },
   homeTop: {
@@ -49,5 +51,10 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     marginTop: 20,
     lineHeight: 28,
+  },
+  menuBar:{
+    paddingVertical: 20,
+    marginBottom: 10,
+    backgroundColor: "red",
   }
 });
