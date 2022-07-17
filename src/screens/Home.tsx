@@ -1,8 +1,15 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import MenuBar from "../components/MenuBar";
+import { JosefinSans_400Regular, JosefinSans_700Bold, useFonts } from "@expo-google-fonts/josefin-sans";
+import AppLoading from "expo-app-loading";
+import { useJosefinFont } from "../../customFonts/useJosefinFont";
 
 const Home = () => {
+  const [fontLoaded, error] = useJosefinFont();
+  if(!fontLoaded){
+    return <AppLoading />
+  }
   const description = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores possimus accusamus perferendis consectetur cupiditate dolore minima quam omnis, ipsa aliquam ea atque, facilis iure laudantium aspernatur, distinctio odio! Aperiam, aliquam!`;
 
   return (
@@ -44,11 +51,13 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     color: '#78002e',
     fontSize: 30,
+    fontFamily:   "JosefinSans_700Bold",
   },
   paraStyle:{
     fontSize: 16,
     color: "#353b48",
     fontStyle: "italic",
+    fontFamily:   "JosefinSans_400Regular",
     marginTop: 20,
     lineHeight: 28,
   },

@@ -15,6 +15,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { useJosefinFont } from './customFonts/useJosefinFont';
 import AppLoading from 'expo-app-loading';
 import { JosefinSans_500Medium } from '@expo-google-fonts/josefin-sans';
+import CourseStack from './src/screens/CourseStack';
 
 const Stack = createBottomTabNavigator<RootStackParamList>();
 
@@ -27,7 +28,7 @@ const Navigation = () => {
     <NavigationContainer >
       <Stack.Navigator screenOptions={{tabBarInactiveTintColor: "gray", tabBarActiveTintColor: "#ad1457", tabBarShowLabel: false, headerTitleStyle:  {color: "#ffffff", fontSize: 20, fontFamily: 'JosefinSans_600SemiBold'}, headerStyle: {backgroundColor: "#ad1457"}}}>
         <Stack.Screen name='Home' options={{title: 'E-Learning', headerShown:false, tabBarIcon:({size, color})=><Ionicons name="school-outline" size={size} color={color} />}} component={Home} />
-        <Stack.Screen name='Courses' options={{title: 'All Courses', headerTitleAlign: "center", tabBarIcon: ({size, color})=><Entypo name="open-book" size={size} color={color} /> }} component={Course} />
+        <Stack.Screen name='Courses' options={{headerShown: false, tabBarIcon: ({size, color})=><Entypo name="open-book" size={size} color={color} /> }} component={CourseStack} />
         <Stack.Screen name='Users' options={{title: 'Learners', headerTitleAlign: "center", tabBarIcon:({size, color})=><FontAwesome5 name="users" size={size} color={color} />}} component={UserData} />
         <Stack.Screen name='About' options={{title: 'About',  headerTitleAlign: "center", tabBarIcon: ({size, color})=><Entypo name="info" size={size} color={color} />}} component={About} />
         <Stack.Screen name='Contact' options={{title: 'Contact Us', headerTitleAlign: "center", tabBarIcon:({size, color})=><Feather name="phone" size={size} color={color} />}} component={Contact} />
