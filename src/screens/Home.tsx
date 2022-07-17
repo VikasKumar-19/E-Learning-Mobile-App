@@ -13,9 +13,9 @@ const Home = () => {
         <Text style={styles.mainHeader}>E-Learning by Vikas</Text>
         <Text style={styles.paraStyle}>{description}</Text>
       </View>
-      <View style={styles.menuBar}>
+      {/* <View style={styles.menuBar}>
         <MenuBar />
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -25,8 +25,7 @@ export default Home;
 const styles = StyleSheet.create({
   mainContainer:{
     flex: 1,
-    backgroundColor: "#e1e2e1",
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   homeTop: {
     flex: 1,
@@ -38,7 +37,8 @@ const styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 2,
     borderRadius: 5,
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 100
   },
   mainHeader:{
     textTransform: "uppercase",
